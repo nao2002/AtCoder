@@ -22,7 +22,7 @@ call :COPYFILE e
 call :COPYFILE f
 
 git add %folder_path%/.
-git commit -m "ファイル追加"
+git commit -m "add: ファイル追加"
 
 exit
 
