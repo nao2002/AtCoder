@@ -12,3 +12,22 @@ except ImportError:
 sys.setrecursionlimit(10**8)
 sys.set_int_max_str_digits(0)
 def input(): return (sys.stdin.readline()).rstrip()
+
+N,M = map(int,input().split())
+
+placed = set()
+ans = 0
+
+for i in range(M):
+    R,C = map(int,input().split())
+
+    pos = [(R,C),(R+1,C),(R,C+1),(R+1,C+1)]
+    for p in pos:
+        if p in placed:
+            break
+    else:
+        for p in pos:
+            placed.add(p)
+        ans += 1
+
+print(ans)
