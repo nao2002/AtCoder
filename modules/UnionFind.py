@@ -29,8 +29,9 @@ class UnionFind:
         """
         x,y = self.root(x), self.root(y)
         if x == y:
-            return self.par[x]
-        if x > y:
+            return -self.par[x]
+        # グループのサイズが大きい方を親にする
+        if self.par[x] > self.par[y]:
             x,y = y,x
         self.par[x] += self.par[y]
         self.par[y] = x
