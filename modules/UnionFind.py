@@ -55,6 +55,7 @@ class UnionFind:
             root_x,root_y = root_y,root_x
         
         self._group_size[root_x] += self._group_size[root_y]
+        self._group_size[root_y] = 0
         self._parent[root_y] = root_x
 
         return self._group_size[root_x]
