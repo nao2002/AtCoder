@@ -37,7 +37,7 @@ class UnionFind:
             self._parent_or_size[node_idx] = self.find_root(self._parent_or_size[node_idx])
             return self._parent_or_size[node_idx]
     
-    def union(self, node_u, node_v):
+    def unite(self, node_u, node_v):
         """
         node_u番目とnode_v番目の所属するグループを合成
         node_u: index(0-indexed)
