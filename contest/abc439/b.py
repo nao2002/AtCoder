@@ -13,3 +13,20 @@ except ImportError:
 sys.setrecursionlimit(10**8)
 sys.set_int_max_str_digits(0)
 def input(): return (sys.stdin.readline()).rstrip()
+
+N = int(input())
+s = str(N)
+
+checked = set()
+
+while s not in checked:
+    if s == "1":
+        print("Yes")
+        exit()
+    checked.add(s)
+    new_s = 0
+    for i in range(len(s)):
+        new_s += int(s[i]) ** 2
+    s = str(new_s)
+
+print("No")

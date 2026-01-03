@@ -13,3 +13,6 @@ except ImportError:
 sys.setrecursionlimit(10**8)
 sys.set_int_max_str_digits(0)
 def input(): return (sys.stdin.readline()).rstrip()
+
+N = int(input())
+print((2**N) - (2*N))
