@@ -11,7 +11,26 @@ try:
 except ImportError:
     pass
 sys.setrecursionlimit(10**8)
-sys.set_int_max_str_digits(0)
+# sys.set_int_max_str_digits(0)
 
 def input(): return (sys.stdin.readline()).rstrip()
+
+T = int(input())
+
+for _ in range(T):
+    N,W = map(int,input().split())
+    C = list(map(int,input().split()))
+
+    a = [0,C[0]]
+    for i in range(1,N):
+        a.append(a[i-1]+C[i])
+    print(a)
+
+    s = sum(C)
+
+    ans = math.inf
+
+    for i in range(W*2):
+        tmp = 0
+        
 
