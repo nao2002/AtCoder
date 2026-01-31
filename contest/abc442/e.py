@@ -13,3 +13,12 @@ except ImportError:
 sys.setrecursionlimit(10**8)
 sys.set_int_max_str_digits(0)
 def input(): return (sys.stdin.readline()).rstrip()
+
+N,Q = map(int,input().split())
+
+def getAngleRad(x,y):
+    return (y) / (math.sqrt(x**2+y**2))
+
+for _ in range(N):
+    X,Y = map(int,input().split())
+    print(getAngleRad(X,Y))
