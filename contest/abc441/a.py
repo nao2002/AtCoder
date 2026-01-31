@@ -13,3 +13,11 @@ except ImportError:
 sys.setrecursionlimit(10**8)
 sys.set_int_max_str_digits(0)
 def input(): return (sys.stdin.readline()).rstrip()
+
+P,Q = map(int,input().split())
+X,Y = map(int,input().split())
+
+if P <= X < P + 100 and Q <= Y < Q + 100:
+    print("Yes")
+else:
+    print("No")

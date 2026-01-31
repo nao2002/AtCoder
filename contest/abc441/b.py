@@ -13,3 +13,24 @@ except ImportError:
 sys.setrecursionlimit(10**8)
 sys.set_int_max_str_digits(0)
 def input(): return (sys.stdin.readline()).rstrip()
+
+N,M = map(int,input().split())
+S = set(list(input()))
+T = set(list(input()))
+Q = int(input())
+
+for _ in range(Q):
+    w = list(input())
+    t = True
+    q = True
+    for c in w:
+        if not c in S:
+            t = False
+        if not c in T:
+            q = False
+    if t and q:
+        print("Unknown")
+    elif t:
+        print("Takahashi")
+    else:
+        print("Aoki")
