@@ -13,3 +13,14 @@ except ImportError:
 sys.setrecursionlimit(10**8)
 sys.set_int_max_str_digits(0)
 def input(): return (sys.stdin.readline()).rstrip()
+
+N,K = map(int,input().split())
+
+remain = K - N
+
+ans = 0
+while remain > 0:
+    ans += 1
+    remain -= (N + ans)
+
+print(ans)
