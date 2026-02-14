@@ -13,3 +13,16 @@ except ImportError:
 sys.setrecursionlimit(10**8)
 sys.set_int_max_str_digits(0)
 def input(): return (sys.stdin.readline()).rstrip()
+
+N = int(input())
+
+A = []
+m = 0
+
+for i in range(N):
+    S = input()
+    A.append(S)
+    m = max(len(S),m)
+
+for s in A:
+    print("."*((m-len(s))//2) + s + "."*((m-len(s))//2))

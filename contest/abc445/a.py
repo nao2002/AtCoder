@@ -13,3 +13,10 @@ except ImportError:
 sys.setrecursionlimit(10**8)
 sys.set_int_max_str_digits(0)
 def input(): return (sys.stdin.readline()).rstrip()
+
+S = list(input())
+
+if S[0] == S[-1]:
+    print("Yes")
+else:
+    print("No")
