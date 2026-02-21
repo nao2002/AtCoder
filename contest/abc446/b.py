@@ -15,3 +15,20 @@ sys.set_int_max_str_digits(0)
 
 def input(): return (sys.stdin.readline()).rstrip()
 
+N,M = map(int,input().split())
+
+selected = set()
+ans = []
+
+for i in range(N):
+    L = int(input())
+    X = list(map(int,input().split()))
+    for i in range(L):
+        if not X[i] in selected:
+            selected.add(X[i])
+            ans.append(X[i])
+            break
+    else:
+        ans.append(0)
+
+print(*ans,sep="\n")

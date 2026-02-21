@@ -15,3 +15,14 @@ sys.set_int_max_str_digits(0)
 
 def input(): return (sys.stdin.readline()).rstrip()
 
+N = int(input())
+A = list(map(int,input().split()))
+
+checked = defaultdict(int)
+ans = 0
+for i in range(N):
+    checked[A[i]] = checked[A[i]-1]+1
+    if checked[A[i]] > ans:
+        ans = checked[A[i]]
+
+print(ans)
