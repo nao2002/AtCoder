@@ -13,8 +13,14 @@
 			"extensions": [
 				"formulahendry.code-runner",
 				"ms-python.python",
-				"-GitHub.copilot-chat"
-			]
+				"-GitHub.copilot-chat",
+				"ms-vscode.cpptools"
+			],
+			"settings": {
+				"code-runner.executorMap": {
+					"cpp": "cd $dir && g++-15 -std=c++23 -Wall -Wextra $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
+				}
+			}
 		}
 	}
 
