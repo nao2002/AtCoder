@@ -19,6 +19,11 @@
 			"settings": {
 				"code-runner.executorMap": {
 					"cpp": "cd $dir && g++-15 -std=c++23 -Wall -Wextra $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
+				},
+				"chat.disableAIFeatures": true,
+				"chat.agent.enabled": false,
+				"github.copilot.enable": {
+					"*": false
 				}
 			}
 		}
