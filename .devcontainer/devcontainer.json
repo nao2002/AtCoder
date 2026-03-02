@@ -20,6 +20,11 @@
 				"code-runner.executorMap": {
 					"cpp": "g++-15 -std=c++23 -Wall -Wextra $dir$fileName -o cpp_tmp_binary && ./cpp_tmp_binary"
 				},
+				"chat.disableAIFeatures": true,
+				"chat.agent.enabled": false,
+				"github.copilot.enable": {
+					"*": false
+				},
 				"C_Cpp.default.compilerPath": "/usr/bin/g++-15"
 			}
 		}
