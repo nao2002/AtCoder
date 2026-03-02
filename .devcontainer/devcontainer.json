@@ -18,8 +18,9 @@
 			],
 			"settings": {
 				"code-runner.executorMap": {
-					"cpp": "cd $dir && g++-15 -std=c++23 -Wall -Wextra $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
-				}
+					"cpp": "g++-15 -std=c++23 -Wall -Wextra $dir$fileName -o cpp_tmp_binary && ./cpp_tmp_binary"
+				},
+				"C_Cpp.default.compilerPath": "/usr/bin/g++-15"
 			}
 		}
 	}

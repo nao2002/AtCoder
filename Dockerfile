@@ -6,7 +6,7 @@ RUN apt-get update && apt-get upgrade -y
 RUN apt-get install -y git curl wget vim
 
 RUN apt-get install -y python3 python3-pip python3.13-venv
-RUN apt-get install -y build-essential gcc-15 g++-15
+RUN apt-get install -y build-essential gcc-15 g++-15 gdb
 
 RUN apt-get autoremove -y &&\
     apt-get clean &&\
