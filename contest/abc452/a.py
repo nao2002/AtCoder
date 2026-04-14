@@ -15,3 +15,13 @@ sys.set_int_max_str_digits(0)
 
 def input(): return (sys.stdin.readline()).rstrip()
 
+M,D = map(int,input().split())
+
+days = [(1,7),(3,3),(5,5),(7,7),(9,9)]
+
+for m,d in days:
+    if m == M and d == D:
+        print("Yes")
+        exit()
+
+print("No")
