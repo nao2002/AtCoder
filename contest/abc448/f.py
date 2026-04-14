@@ -15,3 +15,8 @@ sys.set_int_max_str_digits(0)
 
 def input(): return (sys.stdin.readline()).rstrip()
 
+N = int(input())
+positions = []
+for i in range(N):
+    X,Y = map(int,input().split())
+    positions.append((X,Y))

@@ -15,3 +15,12 @@ sys.set_int_max_str_digits(0)
 
 def input(): return (sys.stdin.readline()).rstrip()
 
+N,X = map(int,input().split())
+A = list(map(int,input().split()))
+
+for i in range(N):
+    if A[i] < X:
+        X = A[i]
+        print(1)
+    else:
+        print(0)
