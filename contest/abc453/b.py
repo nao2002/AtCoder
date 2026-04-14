@@ -15,3 +15,16 @@ sys.set_int_max_str_digits(0)
 
 def input(): return (sys.stdin.readline()).rstrip()
 
+T,X = map(int,input().split())
+
+A = list(map(int,input().split()))
+
+cur = -1
+for i in range(T+1):
+    if i == 0:
+        cur = A[0]
+        print(0, A[0])
+    else:
+        if abs(A[i] - cur) >= X:
+            cur = A[i]
+            print(i, A[i])

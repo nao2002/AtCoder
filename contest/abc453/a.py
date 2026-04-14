@@ -15,3 +15,15 @@ sys.set_int_max_str_digits(0)
 
 def input(): return (sys.stdin.readline()).rstrip()
 
+N = int(input())
+S = input()
+
+ans = ""
+
+for i in range(N):
+    if len(ans) != 0:
+        ans += S[i]
+    elif S[i] != "o":
+        ans += S[i]
+
+print(ans)
