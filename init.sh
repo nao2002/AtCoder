@@ -1,7 +1,6 @@
 set -euo pipefail
 
-read -r -p "コンテスト番号を入力してください:" contest_number
-contest_name="abc$contest_number"
+read -r -p "コンテスト名を入力してください:" contest_name
 folder_path="contest/$contest_name"
 
 git checkout main
@@ -12,8 +11,8 @@ mkdir "$folder_path"
 
 copyfile() {
   local letter="$1"
-  local filename="$contest_number$letter"
-  sed "s/<number>/$filename/g" "template/Template.py" > "$folder_path/$letter.py"
+  local filename="$contest_name$letter"
+  sed "s/<contest_name>/$filename/g" "template/Template.py" > "$folder_path/$letter.py"
 }
 
 copyfile a
