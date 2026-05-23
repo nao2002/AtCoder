@@ -15,3 +15,21 @@ sys.set_int_max_str_digits(0)
 
 def input(): return (sys.stdin.readline()).rstrip()
 
+N = int(input())
+S = list(input())
+
+max_counts = [0,0,0]
+
+for c in S:
+    if c == "A":
+        max_counts[0] += 1
+    elif c == "B":
+        max_counts[1] += 1
+    else:
+        max_counts[2] += 1
+
+checked = [[[False for _ in range(max_counts[2])] for _ in range(max_counts[1])] for _ in range(max_counts[0])]
+
+A_cnt = 0
+B_cnt = 0
+C_cnt = 0

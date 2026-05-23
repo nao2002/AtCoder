@@ -15,3 +15,21 @@ sys.set_int_max_str_digits(0)
 
 def input(): return (sys.stdin.readline()).rstrip()
 
+N,K = map(int,input().split())
+A = list(map(int,input().split()))
+
+dict = defaultdict(int)
+s = 0
+
+for i in range(N):
+    s += A[i]
+    dict[A[i]] += A[i]
+
+values = sorted(dict.values(), reverse=True)
+
+ans = s
+for i in range(K):
+    ans -= values[i]
+    if ans == 0:
+        break
+print(ans)

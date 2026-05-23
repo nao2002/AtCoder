@@ -15,3 +15,9 @@ sys.set_int_max_str_digits(0)
 
 def input(): return (sys.stdin.readline()).rstrip()
 
+A,B,C = map(int,input().split())
+
+if A != B and B == C:
+    print("Yes")
+else:
+    print("No")
