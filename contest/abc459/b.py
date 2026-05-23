@@ -15,3 +15,18 @@ sys.set_int_max_str_digits(0)
 
 def input(): return (sys.stdin.readline()).rstrip()
 
+N = int(input())
+S = list(input().split())
+
+chars = ["abc","def","ghi","jkl","mno","pqrs","tuv","wxyz"]
+
+ans = ""
+for i in range(N):
+    s = S[i]
+    for j in range(len(chars)):
+        c = chars[j]
+        if s[0] in c:
+            ans += str(j+2)
+            break
+
+print(ans)

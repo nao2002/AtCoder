@@ -15,3 +15,9 @@ sys.set_int_max_str_digits(0)
 
 def input(): return (sys.stdin.readline()).rstrip()
 
+X = int(input())
+
+S = list("HelloWorld")
+
+S.pop(X-1)
+print("".join(S))
