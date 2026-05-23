@@ -15,3 +15,14 @@ sys.set_int_max_str_digits(0)
 
 def input(): return (sys.stdin.readline()).rstrip()
 
+N = int(input())
+
+arrs = []
+for i in range(N):
+    L, *A = map(int,input().split())
+    A = list(A)
+    arrs.append(A)
+
+X,Y = map(int,input().split())
+
+print(arrs[X-1][Y-1])

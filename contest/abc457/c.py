@@ -15,3 +15,23 @@ sys.set_int_max_str_digits(0)
 
 def input(): return (sys.stdin.readline()).rstrip()
 
+N,K = map(int,input().split())
+
+arrs = []
+
+for i in range(N):
+    L, *A = map(int,input().split())
+    A = list(A)
+    arrs.append(A)
+C = list(map(int,input().split()))
+
+passed = 0
+
+for i in range(N):
+    add = len(arrs[i])*C[i]
+    if passed + add >= K:
+        remain = K - passed
+        idx = (remain-1) % len(arrs[i])
+        print(arrs[i][idx])
+        exit()
+    passed += add
