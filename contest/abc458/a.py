@@ -15,3 +15,10 @@ sys.set_int_max_str_digits(0)
 
 def input(): return (sys.stdin.readline()).rstrip()
 
+S = input()
+N = int(input())
+
+S = S[N:]
+S = S[:-N]
+
+print(S)

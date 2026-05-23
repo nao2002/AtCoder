@@ -15,3 +15,12 @@ sys.set_int_max_str_digits(0)
 
 def input(): return (sys.stdin.readline()).rstrip()
 
+S = list(input())
+
+ans = 0
+for i in range(len(S)):
+    if S[i] == "C":
+        side_min = min(len(S)-(i+1), i)
+        ans += side_min+1
+
+print(ans)
