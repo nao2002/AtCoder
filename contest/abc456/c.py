@@ -1,0 +1,33 @@
+#abc456c
+import sys
+from collections import defaultdict
+from collections import deque
+import heapq
+import math
+# from sortedcontainers import SortedList, SortedDict, SortedSet
+try:
+    import pypyjit
+    pypyjit.set_param('max_unroll_recursion=-1')
+except ImportError:
+    pass
+sys.setrecursionlimit(10**8)
+sys.set_int_max_str_digits(0)
+
+def input(): return (sys.stdin.readline()).rstrip()
+
+S = list(input())
+
+ans = 0
+length = 0
+last = ""
+
+for i in range(len(S)):
+    if S[i] != last:
+        length += 1
+        ans += length
+    else:
+        length = 1
+        ans += length
+    ans = ans % 998244353
+    last = S[i]
+print(ans%998244353)
