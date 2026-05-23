@@ -15,3 +15,19 @@ sys.set_int_max_str_digits(0)
 
 def input(): return (sys.stdin.readline()).rstrip()
 
+S = list(input())
+
+ans = 0
+length = 0
+last = ""
+
+for i in range(len(S)):
+    if S[i] != last:
+        length += 1
+        ans += length
+    else:
+        length = 1
+        ans += length
+    ans = ans % 998244353
+    last = S[i]
+print(ans%998244353)
