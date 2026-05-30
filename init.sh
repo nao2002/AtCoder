@@ -13,6 +13,7 @@ copyfile() {
   local letter="$1"
   local filename="$contest_name$letter"
   sed "s/<contest_name>/$filename/g" "template/Template.py" > "$folder_path/$letter.py"
+  sed "s/<contest_name>/$filename/g" "template/Template.cpp" > "$folder_path/$letter.cpp"
 }
 
 copyfile a
