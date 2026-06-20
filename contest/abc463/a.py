@@ -15,3 +15,9 @@ sys.set_int_max_str_digits(0)
 
 def input(): return (sys.stdin.readline()).rstrip()
 
+X,Y = map(int,input().split())
+
+if X / 16 == Y / 9:
+    print("Yes")
+else:
+    print("No")

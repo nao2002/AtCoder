@@ -15,3 +15,15 @@ sys.set_int_max_str_digits(0)
 
 def input(): return (sys.stdin.readline()).rstrip()
 
+N,X = input().split()
+N = int(N)
+
+S = [list(input()) for _ in range(N)]
+
+c = ["A","B","C","D","E"]
+idx = c.index(X)
+for i in range(N):
+    if S[i][idx] == "o":
+        print("Yes")
+        exit()
+print("No")

@@ -15,3 +15,5 @@ sys.set_int_max_str_digits(0)
 
 def input(): return (sys.stdin.readline()).rstrip()
 
+N,K = map(int,input().split())
+
