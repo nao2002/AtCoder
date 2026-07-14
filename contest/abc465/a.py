@@ -1,4 +1,4 @@
-#abc465a
+#abc465e
 import sys
 from collections import defaultdict
 from collections import deque
@@ -15,3 +15,9 @@ sys.set_int_max_str_digits(0)
 
 def input(): return (sys.stdin.readline()).rstrip()
 
+A,B = map(int,input().split())
+
+if A*3 > B*2:
+    print("Yes")
+else:
+    print("No")

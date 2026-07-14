@@ -15,3 +15,32 @@ sys.set_int_max_str_digits(0)
 
 def input(): return (sys.stdin.readline()).rstrip()
 
+N = int(input())
+S = list(input())
+
+cur = "r"
+last = "x"
+
+ans = [0]*N
+l_ptr = 0
+r_ptr = N-1
+
+for i in range(N-1,-1,-1):
+    if cur == "r":
+        if S[i] == "o":
+            ans[l_ptr] = i+1
+            l_ptr += 1
+            cur = "l"
+        else:
+            ans[r_ptr] = i+1
+            r_ptr -= 1
+    else:
+        if S[i] == "o":
+            ans[r_ptr] = i+1
+            r_ptr -= 1
+            cur = "r"
+        else:
+            ans[l_ptr] = i+1
+            l_ptr += 1
+
+print(*ans)
