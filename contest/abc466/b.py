@@ -15,3 +15,18 @@ sys.set_int_max_str_digits(0)
 
 def input(): return (sys.stdin.readline()).rstrip()
 
+N,M = map(int,input().split())
+balls = defaultdict(int)
+
+for i in range(N):
+    C,S = map(int,input().split())
+    balls[C] = max(balls[C],S)
+
+ans = []
+for i in range(1,M+1):
+    if i in balls:
+        ans.append(balls[i])
+    else:
+        ans.append(-1)
+    
+print(*ans)

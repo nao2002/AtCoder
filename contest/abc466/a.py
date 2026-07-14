@@ -15,3 +15,11 @@ sys.set_int_max_str_digits(0)
 
 def input(): return (sys.stdin.readline()).rstrip()
 
+N = int(input())
+A = list(map(int,input().split()))
+
+for a in A:
+    if a >= 0:
+        print("No")
+        exit()
+print("Yes")

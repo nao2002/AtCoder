@@ -15,3 +15,22 @@ sys.set_int_max_str_digits(0)
 
 def input(): return (sys.stdin.readline()).rstrip()
 
+N = int(input())
+
+ans = 0
+
+left = 1
+right = 2
+
+while right <= N:
+    print("?",left,right,flush=True)
+    res = input()
+    if res == "Yes":
+        ans += right - left
+        right += 1
+    else:
+        left += 1
+        if right <= left:
+            right = left + 1
+
+print("!",ans,flush=True)
