@@ -15,3 +15,15 @@ sys.set_int_max_str_digits(0)
 
 def input(): return (sys.stdin.readline()).rstrip()
 
+N = int(input())
+not_take = 0
+
+for i in range(N):
+    A,B,S = input().split()
+    A = int(A)
+    B = int(B)
+    remain = B - A
+    if S == "keep":
+        not_take += remain
+
+print(not_take)

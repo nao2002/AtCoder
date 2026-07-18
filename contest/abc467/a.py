@@ -15,3 +15,13 @@ sys.set_int_max_str_digits(0)
 
 def input(): return (sys.stdin.readline()).rstrip()
 
+H,W = map(int,input().split())
+W *= 100
+
+h = H * H
+
+# print(W/h)
+if W / h >= 25.0/100:
+    print("Yes")
+else:
+    print("No")
