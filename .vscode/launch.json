@@ -1,33 +1,21 @@
 {
-    // Use IntelliSense to learn about possible attributes.
-    // Hover to view descriptions of existing attributes.
-    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
-    			    {
-    			        "name": "Launch(Cpp)",
-    			        "type": "cppdbg",
-    			        "request": "launch",
-    			        "program": "${workspaceFolder}/cpp_tmp_binary",
-    			        "args": [],
-    			        "stopAtEntry": false,
-    			        "cwd": "${workspaceFolder}",
-    			        "environment": [],
-    			        "externalConsole": false,
-    			        "MIMode": "gdb",
-    			        "setupCommands": [
-    			            {
-    			                "description": "gdb の再フォーマットを有効にする",
-    			                "text": "-enable-pretty-printing",
-    			                "ignoreFailures": true
-    			            },
-    			            {
-    			            "description": "逆アセンブリ フレーバーを Intel に設定",
-    			            "text": "-gdb-set disassembly-flavor intel",
-    			            "ignoreFailures": true
-    			            }
-    			        ],
-    			        "preLaunchTask": "C/C++: g++-15 build active file"
-    			    }
-    			]
+        {
+            "name": "Debug C++ Active File",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "/tmp/atcoder_cpp_debug",
+            "cwd": "${workspaceFolder}",
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable GDB pretty-printing",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
+            "preLaunchTask": "C/C++: g++-15 debug build active file"
+        }
+    ]
 }

@@ -1,47 +1,36 @@
-// For format details, see https://aka.ms/devcontainer.json. For config options, see the
-// README at: https://github.com/devcontainers/templates/tree/main/src/docker-existing-dockerfile
 {
-	"name": "Existing Dockerfile",
-	"build": {
-		// Sets the run context to one level up instead of the .devcontainer folder.
-		"context": "..",
-		// Update the 'dockerFile' property if you aren't using the standard 'Dockerfile' filename.
-		"dockerfile": "../Dockerfile"
-	},
-	"customizations": {
-		"vscode": {
-			"extensions": [
-				"formulahendry.code-runner",
-				"ms-python.python",
-				"-GitHub.copilot-chat",
-				"ms-vscode.cpptools"
-			],
-			"settings": {
-				"code-runner.executorMap": {
-					"cpp": "g++-15 -std=c++23 -Wall -Wextra $dir$fileName -o cpp_tmp_binary && ./cpp_tmp_binary"
-				},
-				"chat.disableAIFeatures": true,
-				"chat.agent.enabled": false,
-				"github.copilot.enable": {
-					"*": false
-				},
-				"C_Cpp.default.compilerPath": "/usr/bin/g++-15"
-			}
-		}
-	}
-
-	// Features to add to the dev container. More info: https://containers.dev/features.
-	// "features": {},
-
-	// Use 'forwardPorts' to make a list of ports inside the container available locally.
-	// "forwardPorts": [],
-
-	// Uncomment the next line to run commands after the container is created.
-	// "postCreateCommand": "cat /etc/os-release",
-
-	// Configure tool-specific properties.
-	// "customizations": {},
-
-	// Uncomment to connect as an existing user other than the container default. More info: https://aka.ms/dev-containers-non-root.
-	// "remoteUser": "devcontainer"
+    "name": "AtCoder",
+    "build": {
+        "context": "..",
+        "dockerfile": "../Dockerfile"
+    },
+    "remoteEnv": {
+        "DEBUGINFOD_URLS": ""
+    },
+    "capAdd": [
+        "SYS_PTRACE"
+    ],
+    "securityOpt": [
+        "seccomp=unconfined"
+    ],
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "formulahendry.code-runner",
+                "ms-python.python",
+                "ms-vscode.cpptools"
+            ],
+            "settings": {
+                "code-runner.executorMap": {
+                    "cpp": "g++-15 -std=gnu++23 -O2 -march=native -pthread -fopenmp -Wall -Wextra \"$fullFileName\" -o /tmp/atcoder_cpp_run && /tmp/atcoder_cpp_run",
+                    "python": "/home/venv/bin/python \"$fullFileName\""
+                },
+                "python.defaultInterpreterPath": "/home/venv/bin/python",
+                "python-envs.terminal.autoActivationType": "off",
+                "chat.disableAIFeatures": true,
+                "C_Cpp.default.compilerPath": "/usr/bin/g++-15",
+                "C_Cpp.default.cppStandard": "c++23"
+            }
+        }
+    }
 }
