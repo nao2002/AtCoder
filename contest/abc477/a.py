@@ -15,3 +15,8 @@ sys.set_int_max_str_digits(0)
 
 def input(): return (sys.stdin.readline()).rstrip()
 
+arr = ["B","Y","R"]
+
+c = input()
+
+print(arr[(arr.index(c)+1)%3])
