@@ -28,6 +28,10 @@
                 "python.defaultInterpreterPath": "/home/venv/bin/python",
                 "python-envs.terminal.autoActivationType": "off",
                 "chat.disableAIFeatures": true,
+				"chat.agent.enabled": false,
+				"github.copilot.enable": {
+					"*": false
+				},
                 "C_Cpp.default.compilerPath": "/usr/bin/g++-15",
                 "C_Cpp.default.cppStandard": "c++23"
             }
