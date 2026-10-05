@@ -15,3 +15,12 @@ sys.set_int_max_str_digits(0)
 
 def input(): return (sys.stdin.readline()).rstrip()
 
+N, M = map(int,input().split())
+
+ans = [0]*N
+
+for i in range(M):
+    ans[i%N] += 1
+
+for i in range(N):
+    print(ans[i])
