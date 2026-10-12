@@ -15,3 +15,17 @@ sys.set_int_max_str_digits(0)
 
 def input(): return (sys.stdin.readline()).rstrip()
 
+N = int(input())
+
+S = list(input())
+
+ans = 0
+
+cur = 0
+for i in range(N):
+    if S[i] == "R":
+        cur += 1
+        ans = max(ans,cur)
+    else:
+        cur = 0
+print(ans)
