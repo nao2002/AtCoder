@@ -16,3 +16,15 @@ sys.set_int_max_str_digits(0)
 
 def input(): return (sys.stdin.readline()).rstrip()
 
+N,Q = map(int,input().split())
+K = list(map(int,input().split()))
+
+arr = [(i+1,1) for i in range(N)]
+
+for k in K:
+    bef = arr[:k]
+    for i in range(k):
+        arr[i] = (bef[k-i-1][0],bef[k-i-1][1]*-1)
+
+for i in range(N):
+    print(arr[i][0]*arr[i][1])
