@@ -16,3 +16,11 @@ sys.set_int_max_str_digits(0)
 
 def input(): return (sys.stdin.readline()).rstrip()
 
+K = int(input())
+A = list(map(int,input().split()))
+
+A.sort()
+if not 9 in A:
+    print(-1)
+else:
+    print(A[0])

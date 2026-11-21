@@ -16,3 +16,24 @@ sys.set_int_max_str_digits(0)
 
 def input(): return (sys.stdin.readline()).rstrip()
 
+N = int(input())
+A = list(map(int,input().split()))
+
+arr = [[A[0],1]]
+
+for i in range(1,N):
+    if A[i] != arr[-1][0]:
+        arr.append([A[i],1])
+    else:
+        arr[-1][1] += 1
+
+cnt_nums = defaultdict(int)
+sums = 0
+ans = 1
+for i in range(len(arr)):
+    ans += (sums - cnt_nums[arr[i][0]])
+    add = (sums - cnt_nums[arr[i][0]])
+    cnt_nums[arr[i][0]] += arr[i][1]
+    sums += arr[i][1]
+
+print(ans)
