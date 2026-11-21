@@ -16,3 +16,19 @@ sys.set_int_max_str_digits(0)
 
 def input(): return (sys.stdin.readline()).rstrip()
 
+N,M = map(int,input().split())
+
+for i in range(N):
+    S = list(input())
+    x = 0
+    last = -1
+    for j in range(M):
+        if S[j] == "x":
+            x += 1
+            last = j
+    if x >= 1:
+        if x == M:
+            print(f"Faucet {i+1}")
+        else:
+            print(f"Drain {last+1}")
+        exit()

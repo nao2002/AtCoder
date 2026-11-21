@@ -16,3 +16,15 @@ sys.set_int_max_str_digits(0)
 
 def input(): return (sys.stdin.readline()).rstrip()
 
+
+def sign(num):
+    if num >= 0:
+        return 1
+    return -1
+
+A, B = map(int,input().split())
+
+if sign(A) == sign(B):
+    print("Yes")
+else:
+    print("No")
